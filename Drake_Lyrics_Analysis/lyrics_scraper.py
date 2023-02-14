@@ -9,6 +9,13 @@ from search_functions import *
 base = "https://api.genius.com"
 client_access_token  = "TczpRGqWv-BdhRtJQ0WeQg5HQxGSANb_LzKl5qYgLynMcnNzTgAfsO6FSUxqXdta"
 
+def get_lyrics_path(song_id):
+    song_url = f"songs/{song_id}"
+    data = get_json(song_url)
+    path = data['response']['song']['path']
+
+    return path
+
 def get_songs_id(artist_id):
     current_page = 1
     next_page = True

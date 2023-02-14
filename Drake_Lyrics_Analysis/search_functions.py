@@ -5,7 +5,7 @@ import json
 from bs4 import BeautifulSoup
 
 base = "https://api.genius.com"
-client_access_token  = "ys-Hvja24uT_FUN5GOBotqi1A52kGCDodUz1bo63C-zcTxXASgba_7ESi2BAJolt"
+client_access_token  = "TczpRGqWv-BdhRtJQ0WeQg5HQxGSANb_LzKl5qYgLynMcnNzTgAfsO6FSUxqXdta"
 
 def get_json(path, params = None, header = None):
     requrl = '/'.join([base,path])
@@ -18,7 +18,7 @@ def get_json(path, params = None, header = None):
     response = requests.get(url = requrl, params = params, headers = header)
     response.raise_for_status()
 
-    return response.json
+    return response.json()
 
 def search(artist_name):
     search_url  = f'{base}/search?q={artist_name}&access_token={client_access_token}'
