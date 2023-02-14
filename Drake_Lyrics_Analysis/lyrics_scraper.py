@@ -16,6 +16,8 @@ def get_lyrics_path(song_id):
 
     return path
 
+
+
 def get_songs_id(artist_id):
     current_page = 1
     next_page = True
