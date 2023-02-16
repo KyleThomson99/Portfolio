@@ -5,6 +5,8 @@ import json
 from bs4 import BeautifulSoup
 import pandas as pd
 
+from wiki_discog_scraper import *
+
 base = "https://api.genius.com"
 client_access_token  = "TczpRGqWv-BdhRtJQ0WeQg5HQxGSANb_LzKl5qYgLynMcnNzTgAfsO6FSUxqXdta"
 
@@ -85,6 +87,10 @@ def main():
     df = pd.DataFrame.from_dict(song_list, orient = 'index')
     df.to_csv('drake_songs.csv')
 
+    wiki_url =  'https://en.wikipedia.org/wiki/Drake_discography'
+    wiki_df = scrape_wiki(wiki_url)
+
+    wiki_df.to_csv('drake_wiki.csv')
 
 
 if __name__ == "__main__":
