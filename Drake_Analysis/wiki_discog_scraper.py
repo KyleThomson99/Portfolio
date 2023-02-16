@@ -1,5 +1,4 @@
 import pandas as pd
-import requests
 import urllib.request
 from bs4 import BeautifulSoup
 import re
@@ -7,8 +6,7 @@ import re
 def scrape_wiki(wiki_url):
     html = urllib.request.urlopen(wiki_url)
     soup = BeautifulSoup(html, 'html.parser')
-
-
+    
     tables = soup.find_all('table', class_ = 'wikitable plainrowheaders')
 
     list_of_dfs = []
